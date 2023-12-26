@@ -1,2 +1,2 @@
 web: gunicorn app:app
-worker: python api.py
+web: python api.py
