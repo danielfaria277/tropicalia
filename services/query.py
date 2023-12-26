@@ -125,10 +125,6 @@ def consultar_estoque_produtos():
 ##################################################
 #FATURAMENTO TOTAL
 # Defina a localidade para o Brasil
-locale.setlocale(locale.LC_MONETARY, 'pt_BR.utf-8')
-
-def formatar_moeda(valor):
-    return locale.currency(valor, grouping=True)
 
 def obter_total_geral():
     try:
@@ -151,10 +147,10 @@ def obter_total_geral():
         # Recuperar os resultados
         resultados = cursor.fetchall()
 
-        # Somar os resultados e retornar o total geral
+        # Somar os resultados e retornar o total geral como um número float
         total_geral = sum(resultado[1] for resultado in resultados)
 
-        return formatar_moeda(total_geral)
+        return total_geral
 
     except mysql.connector.Error as err:
         print(f"Erro de conexão com o banco de dados: {err}")
