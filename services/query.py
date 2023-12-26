@@ -125,7 +125,7 @@ def consultar_estoque_produtos():
 ##################################################
 #FATURAMENTO TOTAL
 # Defina a localidade para o Brasil
-locale.setlocale(locale.LC_MONETARY, 'pt_BR.utf-8')
+locale.setlocale(locale.LC_MONETARY, '')
 
 def formatar_moeda(valor):
     return locale.currency(valor, grouping=True)
