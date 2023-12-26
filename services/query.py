@@ -147,10 +147,13 @@ def obter_total_geral():
         # Recuperar os resultados
         resultados = cursor.fetchall()
 
-        # Somar os resultados e retornar o total geral como um número float
+        # Somar os resultados
         total_geral = sum(resultado[1] for resultado in resultados)
 
-        return total_geral
+        # Formatar o resultado como um número real no estilo "10.000,00"
+        total_formatado = "{:,.2f}".format(total_geral)
+
+        return total_formatado
 
     except mysql.connector.Error as err:
         print(f"Erro de conexão com o banco de dados: {err}")
