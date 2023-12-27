@@ -10,10 +10,11 @@ vendasPorProduto = obter_vendas_por_produto()
 estoqueProdutos = consultar_estoque_produtos()
 faturamentoTotal = obter_total_geral()
 
+
 #Criar rota decorator
 @app.route('/')
 def index():
-    
+    print(faturamentoTotal)
     return render_template("index.html",
                            totalPorCliente = totalPorCliente,
                            vendasPorProduto = vendasPorProduto,

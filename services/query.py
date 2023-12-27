@@ -150,8 +150,8 @@ def obter_total_geral():
         # Somar os resultados
         total_geral = sum(resultado[1] for resultado in resultados)
 
-        # Formatar o resultado como um número real no estilo "10.000,00"
-        total_formatado = "{:,.2f}".format(total_geral)
+        # Formatar o resultado como um número real no estilo "203.298,98"
+        total_formatado = "{:,.2f}".format(total_geral).replace(',', 'temp').replace('.', ',').replace('temp', '.')
 
         return total_formatado
 
